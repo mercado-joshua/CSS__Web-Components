@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .box { /* card container */
+    position: relative;
+    width: 300px;
+    height: 400px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, rgba(0,0,0,.2));
+  }
+
+  .container .box:hover {
+    color: #000;
+  }
+
+  .container .box::before { /* border */
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #fff;
+    background-color: #000;
+    filter: url(#wavy);
+  }
+
+  .container .box:hover::before {
+    background-color: #fff;
+    transition: 0.5s;
+  }
+
+  .container .box::after { /* adds shine effect */
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 50%;
+    height: 100%;
+    border: 4px solid #fff;
+    filter: url(#wavy);
+    background-color: rgba(255,255,255,.1);
+    border-right: none;
+  }
+
+  .container .box .content { /* inside the card */
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="box">
+      <div class="content">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat suscipit voluptas dicta officiis repellat enim? Molestiae culpa, nobis delectus itaque odit totam nulla sint natus.</p>
+      </div>
+    </div>
+  </div>
+  <svg>
+    <filter id="wavy">
+      <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2">
+        <animate attributeName="baseFrequency" dur="60s" values="0.02;0.05;0.02" repeatCount="indefinite"></animate>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+    </filter>
+  </svg>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

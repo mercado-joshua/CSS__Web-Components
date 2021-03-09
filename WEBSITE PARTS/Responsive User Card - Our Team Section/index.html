@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #262626;
+  }
+
+  .container {
+    width: 1200px;
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    position: relative;
+    width: calc(50% - 20px);
+    min-height: 300px;
+    background-color: #fff;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+
+  .card .imgBx {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+  }
+
+  .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card .details {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+  }
+
+  .card .details .content {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .card .details .content h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 0.85em;
+    font-weight: 600;
+  }
+
+  .card .details .content h2 span {
+    font-size: 14px;
+    color: #777;
+  }
+
+  .card .details .content ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .card .details .content ul li {
+    list-style: none;
+    margin-left: 2px;
+  }
+
+  .card .details .content a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 500;
+  }
+
+  .card .details .content a:hover { /* show the icon */
+    background-color: #262626;
+    color: #fff;
+  }
+
+  .card .details .content ul li a {
+    color: #fff;
+    border: none;
+  }
+  /* gives icons diff colors */
+  .card .details .content ul li:nth-child(1) a {
+    background-color: #3b5995;
+  }
+
+  .card .details .content ul li:nth-child(2) a {
+    background-color: #55acee;
+  }
+
+  .card .details .content ul li:nth-child(3) a {
+    background-color: #b31217;
+  }
+
+  .card .details .content ul li:nth-child(4) a {
+    background-color: #0077b5;
+  }
+
+  @media (max-width: 1200px) {
+    .container {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .card {
+      width: calc(70% - 20px);
+      margin: 10px auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card .imgBx {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+
+    .card .details {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: calc(100% - 40px);
+      margin: 10px auto;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="card">
+      <div class="imgBx">
+        <img src="img/images (6).jpeg" alt="">
+      </div>
+      <div class="details">
+        <div class="content">
+          <h2>Someone Famous<br><span>Founder</span></h2>
+          <ul>
+            <li><a href="#">Fb</a></li>
+            <li><a href="#">Tw</a></li>
+            <li><a href="#">Yt</a></li>
+            <li><a href="#">In</a></li>
+          </ul>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="img/images (6).jpeg" alt="">
+      </div>
+      <div class="details">
+        <div class="content">
+          <h2>Someone Famous<br><span>Founder</span></h2>
+          <ul>
+            <li><a href="#">Fb</a></li>
+            <li><a href="#">Tw</a></li>
+            <li><a href="#">Yt</a></li>
+            <li><a href="#">In</a></li>
+          </ul>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="img/images (6).jpeg" alt="">
+      </div>
+      <div class="details">
+        <div class="content">
+          <h2>Someone Famous<br><span>Founder</span></h2>
+          <ul>
+            <li><a href="#">Fb</a></li>
+            <li><a href="#">Tw</a></li>
+            <li><a href="#">Yt</a></li>
+            <li><a href="#">In</a></li>
+          </ul>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

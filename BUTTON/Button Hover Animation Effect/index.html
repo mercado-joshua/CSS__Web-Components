@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #06031d;
+  }
+
+  a {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+
+    overflow: hidden;
+  }
+
+  a span {
+    position: absolute;
+    display: block;
+    background-color: #03a9f4;
+  }
+
+  /* button border animation */
+  a span:nth-child(1) { /* creates left border */
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(0);
+  }
+
+  a:hover span:nth-child(1) { /* moves left border to the top */
+    transition: 0.5s;
+    transform: translateY(-100%);
+  }
+
+  a span:nth-child(2) { /* creates top border */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-100%);
+  }
+
+  a:hover span:nth-child(2) { /* moves top border to the right */
+    transition: 0.75s;
+    transition-delay: 0.25s;
+    transform: translateX(100%);
+  }
+
+  a span:nth-child(3) { /* creates right border */
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(-100%);
+  }
+
+  a:hover span:nth-child(3) { /* moves right border to the bottom */
+    transition: 0.5s;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+
+  a span:nth-child(4) {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(0);
+  }
+
+  a:hover span:nth-child(4) {
+    transition: 0.5s;
+    transform: translateY(100%);
+  }
+
+  a span:nth-child(5) { /* creates top border */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateX(100%);
+  }
+
+  a:hover span:nth-child(5) { /* moves right bottom border to the left bottom */
+    transition: 0.75s;
+    transition-delay: 0.25s;
+    transform: translateX(-100%);
+  }
+
+  a span:nth-child(6) {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateY(100%);
+  }
+
+  a:hover span:nth-child(6) {
+    transition: 0.5s;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <a href="#">
+    Button
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

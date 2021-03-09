@@ -1,0 +1,343 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  section::before { /* slanted background */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff2562;
+    -webkit-clip-path: polygon(48% 0, 100% 0, 100% 100%, 81% 100%);
+    clip-path: polygon(48% 0, 100% 0, 100% 100%, 81% 100%);
+
+    animation: fade-in 0.5s ease-in forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+  }
+
+  section .content {
+    position: relative;
+    padding: 100px 50px 100px 150px;
+    box-sizing: border-box;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+
+  section .content h2 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 800;
+  }
+
+  section .content p {
+    color: #fff;
+    font-size: 1.2em;
+  }
+
+  section .content a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    background-color: #ff2562;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  section .imgBx {
+    position: relative;
+    padding-right: 100px;
+  }
+
+  section .imgBx img {
+    max-width: 500px;
+
+    animation: fade-in 0.5s ease-in forwards;
+    animation-delay: 2s;
+    opacity: 0;
+  }
+
+  .sci {
+    position: absolute;
+    bottom: 75px;
+    left: 150px;
+    display: flex;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+
+  .sci li  {
+    list-style: none;
+  }
+
+  .sci li a {
+    text-decoration: none;
+    color: #999;
+    margin-right: 30px;
+    font-size: 0.9em;
+  }
+
+  .sci li a:hover {
+    color: #fff;
+  }
+
+  .nav { /* border block at the beginning */
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    display: flex;
+    border-left: 5px solid #ff2562;
+    padding-left: 20px;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0s;
+    opacity: 0;
+  }
+
+  .nav li  {
+    list-style: none;
+  }
+
+  .nav li a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .nav li a:active,
+  .nav li a:hover {
+    color: #ff2562;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes left-in {
+    0% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .menuicon { /* show this icon */
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      width: 30px;
+      height: 30px;
+      background-image: url("img/menu.png");
+      filter: invert(1);
+      background-size: 30px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      z-index: 1000;
+    }
+
+    .menuicon.active { /* change to close button */
+      background-image: url("img/close.png");
+      filter: invert(1);
+      background-size: 30px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      z-index: 1000;
+    }
+
+    .nav { /* vertical navbar */
+      position: fixed;
+      top: -20px;
+      left: -100%; /* position out of the screen */
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.95);
+      flex-direction: column;
+      z-index: 11;
+      border: none;
+      padding: 50px;
+    }
+
+    .nav.active {
+      left: 0;
+    }
+
+    .nav li {
+      margin: 5px 0;
+    }
+
+    section {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section::before {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 10%, 0 26%);
+      clip-path: polygon(0 0, 100% 0, 100% 10%, 0 26%);
+    }
+
+    section .content {
+      padding: 50px;
+      margin-bottom: 30px;
+    }
+
+    section .content h2 {
+      font-size: 1.5em;
+    }
+
+    section .content p {
+      font-size: 1em;
+    }
+
+    section .content a {
+      font-size: 0.8em;
+      padding: 10px;
+    }
+
+    section .imgBx {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 0;
+      margin-top: 20px;
+    }
+
+    section .imgBx img {
+      max-width: 300px;
+    }
+
+    .sci {
+      left: 50px;
+      bottom: 30px;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <section>
+    <div class="content">
+      <div>
+        <h2>Cristiano Ronaldo</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, assumenda corporis. Placeat reiciendis quia exercitationem autem asperiores sed dolorum, ab odio vero! Accusantium impedit ad, placeat molestias ab laboriosam nemo?</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="imgBx">
+      <img src="img/21832-2-cristiano-ronaldo-hd.png" alt="">
+    </div>
+
+    <ul class="nav" id="nav">
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Performance</a></li>
+      <li><a href="">Team</a></li>
+      <li><a href="">Ranking</a></li>
+    </ul>
+
+    <ul class="sci">
+      <li><a href="">Facebook</a></li>
+      <li><a href="">Twitter</a></li>
+      <li><a href="">Instagram</a></li>
+    </ul>
+  </section>
+
+  <span class="menuicon" id="toggle" onclick="menuToggle()"></span>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function menuToggle() {
+      let nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+
+      let toggle = document.getElementById('toggle');
+      toggle.classList.toggle('active');
+    }
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

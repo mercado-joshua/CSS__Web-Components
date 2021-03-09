@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    position: relative;
+    width: 95%;
+    margin: 100px auto 0;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 40px;
+  }
+
+  .container .card { /* per card */
+    position: relative;
+    width: 300px;
+    height: 440px;
+    margin: 0 auto;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+/*
+  .container .card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 20px 20px rgba(0,0,0,.2);
+  }
+*/
+
+  .container .card .img-box { /* image container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  }
+
+  .container .card:hover .img-box {
+    opacity: 1;
+  }
+
+  .container .card .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container .card .content {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: -100%; /* moves all content down */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.5s;
+  }
+
+  .container .card:hover .content {
+    bottom: 0;
+  }
+
+  .container .card:nth-child(1) .content { /* adds color per card */
+    background: linear-gradient(0deg, #c21833, transparent);
+  }
+
+  .container .card:nth-child(2) .content { /* adds color per card */
+    background: linear-gradient(0deg, #8012a5, transparent);
+  }
+
+  .container .card:nth-child(3) .content { /* adds color per card */
+    background: linear-gradient(0deg, #3a414c, transparent);
+  }
+
+  .container .card:nth-child(4) .content { /* adds color per card */
+    background: linear-gradient(0deg, #2196f3, transparent);
+  }
+
+  .container .card .content h2 {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .container .card .content h2 span {
+    color: #ffeb3b;
+    font-size: 16px;
+  }
+
+  .container .card .content p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .container .card .content ul {
+    display: flex;
+    margin: 20px 0 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container .card .content ul li {
+    list-style: none;
+  }
+
+  .container .card .content ul li a {
+    color: #fff;
+    padding: 0 10px;
+    font-size: 18px;
+    transition: 0.5s;
+  }
+
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="card">
+      <div class="img-box">
+        <img src="https://i.pravatar.cc/500" alt="">
+      </div>
+      <div class="content">
+        <h2>Someone Famous<br><span>UX/UI Designer</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum quasi fugiat sequi eos debitis cupiditate itaque velit aliquid</p>
+
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-box">
+        <img src="https://i.pravatar.cc/500" alt="">
+      </div>
+      <div class="content">
+        <h2>Someone Famous<br><span>UX/UI Designer</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum quasi fugiat sequi eos debitis cupiditate itaque velit aliquid</p>
+
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-box">
+        <img src="https://i.pravatar.cc/500" alt="">
+      </div>
+      <div class="content">
+        <h2>Someone Famous<br><span>UX/UI Designer</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum quasi fugiat sequi eos debitis cupiditate itaque velit aliquid</p>
+
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-box">
+        <img src="https://i.pravatar.cc/500" alt="">
+      </div>
+      <div class="content">
+        <h2>Someone Famous<br><span>UX/UI Designer</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum quasi fugiat sequi eos debitis cupiditate itaque velit aliquid</p>
+
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="libs/tilt.js-master/dest/tilt.jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.card').tilt({
+        maxTilt: 10,
+        glare: true,
+        maxGlare: .4
+      });
+    });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

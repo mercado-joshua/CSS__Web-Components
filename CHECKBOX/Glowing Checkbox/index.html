@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+  }
+
+  ul { /* container */
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 240px;
+    background-image: linear-gradient(0deg, #000000, #0c0c0c);
+  }
+
+  ul::before { /* adds shine effect */
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .05);
+    bottom: -50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin: 15px;
+  }
+
+  ul li label {
+    position: relative;
+  }
+
+  ul li label input[type="checkbox"] { /* hides checkbox */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  ul li label .icon-box { /* style the box */
+    width: 60px;
+    height: 60px;
+    background-color: #101010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #000;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+
+  ul li label .icon-box .fa { /* styles icons */
+    font-size: 30px;
+    color: #222;
+    transition: 0.5s;
+  }
+
+  ul li label input[type="checkbox"]:checked ~ .icon-box {
+    background-color: #000;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(33,156,243,.5), 0 0 20px rgba(33,156,243,.5), 0 0 30px rgba(33,156,243,.5),
+    inset 0 0 10px rgba(33,156,243,1);
+  }
+
+  ul li label input[type="checkbox"]:checked ~ .icon-box .fa{
+    color: #fff;
+    text-shadow: 0 0 10px rgba(33,156,243,1), 0 0 10px rgba(33,156,243,1);
+  }
+
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <ul>
+    <li>
+      <label> <!-- Wag gagamitan ng for="" ang <label> -->
+        <input type="checkbox" name="">
+        <div class="icon-box">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </div>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" name="">
+        <div class="icon-box">
+          <i class="fa fa-plane" aria-hidden="true"></i>
+        </div>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" name="">
+        <div class="icon-box">
+          <i class="fa fa-moon-o" aria-hidden="true"></i>
+        </div>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" name="">
+        <div class="icon-box">
+          <i class="fa fa-wifi" aria-hidden="true"></i>
+        </div>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" name="">
+        <div class="icon-box">
+          <i class="fa fa-volume-up" aria-hidden="true"></i>
+        </div>
+      </label>
+    </li>
+
+    <li>
+      <label>
+        <input type="checkbox" name="">
+        <div class="icon-box">
+          <i class="fa fa-bluetooth-b" aria-hidden="true"></i>
+        </div>
+      </label>
+    </li>
+
+  </ul>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

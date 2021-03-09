@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #19182d;
+  }
+
+  .container {
+    /*width: 1000px;
+    margin: 250px auto 0;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+  }
+
+  .container .box {
+    width: 25%;
+    float: left;
+  }
+
+  .container .box h2{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .container .box .chart {
+    position: relative;
+    width: 180px; /* check height and width of the canvas in the inspector */
+    height: 180px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 42px;
+    line-height: 180px;
+    color: #fff;
+  }
+
+  .container .box .chart canvas { /* put in back into place */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="box">
+      <div class="chart" data-percent="73">73%</div>
+      <h2>HTML5</h2>
+    </div>
+
+    <div class="box">
+        <div class="chart" data-percent="90">90%</div>
+        <h2>CSS3</h2>
+    </div>
+
+    <div class="box">
+        <div class="chart" data-percent="85">85%</div>
+        <h2>PHP</h2>
+    </div>
+
+    <div class="box">
+        <div class="chart" data-percent="60">60%</div>
+        <h2>Java</h2>
+    </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="libs/easy-pie-chart-master/dist/jquery.easypiechart.min.js"></script>
+  <script>
+    // check the documentation
+    $(function() {
+        $('.chart').easyPieChart({
+            //your options goes here
+            size: 180, // and adjust also the css
+            barColor: '#17d3e6',
+            scaleColor: false,
+            lineWidth: 15,
+            trackColor: '#373737',
+            lineCap: 'circle',
+            animate: 2000 // animation duration
+        });
+    });
+</script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

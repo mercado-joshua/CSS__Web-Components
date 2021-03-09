@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: NO
+  * floats: NO
+  * explicit specified units: YES
+  */
+  *,
+  *::before,
+  *::after {
+    /*outline: dashed thin;*/
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sec1 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #ff319c url("img/1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+  }
+
+  #curve { /* id of svg */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #curve path {
+    fill: #ff0;
+  }
+
+  .sec2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #ff0;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <section class="sec1">
+    <svg id="curve" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1416.98 164.9"><path class="cls-1" d="M1404.05,298.58a40.74,40.74,0,0,1-.88-6.75,31.78,31.78,0,0,1,2.16-12.9,39.12,39.12,0,0,1-.43-4.34,31.52,31.52,0,0,1,1.09-9.68,199.43,199.43,0,0,1-1.07-22.39c.23-11.2,2.72-22.26,2.55-33.48s-3.22-22.28-2.57-33.59c0-1,.15-2,.27-3C937,102.42,909.91,204,528.5,254.5c-385,51-538,0-538,0v58.35c1.27.11,2.54.22,3.81.31,8.33.61,16.73.27,25.08.17,20.32-.22,40.63-.76,60.94-1.15,41.05-.8,82.12-.49,123.18-.68,40.7-.19,81.4-.45,122.11-.57,20.27-.06,40.59-.48,60.84.36,8.29.35,16.56.88,24.82,1.52a511.15,511.15,0,0,1,70.65-5.72c38-.44,76,2.07,113.89-.41,9.21-.61,18.39-2,27.61-2.46a125.69,125.69,0,0,1,18.61.65c14.29-1.4,28.68-1.75,43-1.84,12.38-.07,24.77.36,37.14.14a330,330,0,0,1,33.87.88c14.81,1.25,29.63,2.67,44.45.78a20.34,20.34,0,0,1,3.82-.12c27-2.43,53.87-1.22,81.21,1.25,14.6,1.32,29.2,2.75,43.84,3.55,13.77.75,27.49.48,41.27.36,27.61-.24,55.23.2,82.83-.41,14-.31,28.1-.89,42.11-2,13.26-1.06,26.41-3.3,39.69-4.05,26.87-1.54,53.76,1.66,80.43,4.65,23.89-.43,47.78-.86,71.67-.84,39,0,78,.12,116.75-4.38-.05-.51-.08-1-.11-1.52C1404,300.39,1404,299.48,1404.05,298.58Z" transform="translate(9.5 -148.61)"/></svg>
+  </section>
+  <section class="sec2"></section>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

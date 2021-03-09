@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: NO
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(#0021ce, #050f44);
+  }
+
+  .newsletter {
+    position: relative;
+    padding: 40px;
+    box-sizing: border-box;
+    min-width: 600px;
+    background-color: #0b229e;
+    box-shadow: 0 60px 50px rgba(0, 0, 0, .3);
+  }
+
+  .newsletter h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 2em;
+    color: #fff;
+  }
+
+  .newsletter .inputBox {
+    position: relative;
+    margin: 40px 0 20px;
+    width: 100%;
+  }
+
+  .newsletter .inputBox input {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+    color: #fff;
+    transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+  }
+
+  .newsletter .inputBox.active input { /*when focused*/
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+  }
+
+  .newsletter .inputBox label {
+    position: relative;
+    font-size: 1.2em;
+    color: #fff;
+    padding: 10px 0;
+    display: inline-block;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  .newsletter .inputBox.active label { /*when focused*/
+    color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-30px);
+  }
+
+  .newsletter input[type="submit"] {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    margin: 10px 0 0;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s;
+    font-weight: 600;
+  }
+
+  .newsletter input[type="submit"]:hover {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <div class="inputBox">
+      <input type="text" name="">
+      <label for="">Enter Your Name</label>
+    </div>
+    <div class="inputBox">
+      <input type="text" name="">
+      <label for="">Enter Your Email Address</label>
+    </div>
+    <input type="submit" value="Subscribe" name="">
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  $('input').focus(function() {
+    $(this).parent().addClass('active');
+
+    $('input').focusout(function() {
+      if($(this).val() == '') {
+        $(this).parent().removeClass('active');
+      } else {
+        $(this).parent().addClass('active');
+      }
+    });
+  });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

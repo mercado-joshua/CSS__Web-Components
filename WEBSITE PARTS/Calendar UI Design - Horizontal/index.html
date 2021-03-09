@@ -1,0 +1,188 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #352b48;
+  }
+
+  .calendar {
+    position: relative;
+    background-color: #fff;
+    width: 850px;
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 15px solid #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+  }
+
+  .calendar .date { /* container box of the date */
+    width: 400px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .calendar .date h3 {
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .calendar .date .days { /* wraps the days */
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .calendar .date .days .day,
+  .calendar .date .days .number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar .date .days .day:first-child,
+  .calendar .date .days .number:nth-child(7n+1) { /*target all sunday*/
+    color: #f44336;
+    font-weight: 600;
+  }
+
+  .calendar .date .days .number.active { /* highlight current date */
+    background-color: #352b48;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .calendar .image { /* container box of the image */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #000;
+  }
+
+  .calendar .image img { /* stretch image according to the box  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="calendar">
+    <div class="date">
+      <h3>July</h3>
+      <div class="days">
+
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Th</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+
+        <div class="number"></div>
+        <div class="number">1</div>
+        <div class="number">2</div>
+        <div class="number">3</div>
+        <div class="number">4</div>
+        <div class="number">5</div>
+        <div class="number active">6</div>
+        <div class="number">7</div>
+        <div class="number">8</div>
+        <div class="number">9</div>
+        <div class="number">10</div>
+        <div class="number">11</div>
+        <div class="number">12</div>
+        <div class="number">13</div>
+        <div class="number">14</div>
+        <div class="number">15</div>
+        <div class="number">16</div>
+        <div class="number">17</div>
+        <div class="number">18</div>
+        <div class="number">19</div>
+        <div class="number">20</div>
+        <div class="number">21</div>
+        <div class="number">22</div>
+        <div class="number">23</div>
+        <div class="number">24</div>
+        <div class="number">25</div>
+        <div class="number">26</div>
+        <div class="number">27</div>
+        <div class="number">28</div>
+        <div class="number">29</div>
+        <div class="number">30</div>
+        <div class="number">31</div>
+      </div>
+    </div>
+    <div class="image">
+      <img src="img/images (6).jpeg" alt="">
+    </div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

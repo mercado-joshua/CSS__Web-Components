@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    outline: dashed thin;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #003e46;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin: 50px 0;
+  }
+
+  .box { /*holder of img.. set to black first*/
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #000;
+    box-shadow: 0 30px 30px rgba(0,0,0,.5);
+
+    margin: 15px;
+  }
+
+  .box .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+  }
+
+  .box:hover .imgBx img { /* makes the .box appear */
+    opacity: 0;
+  }
+
+  .box .content { /* creates caption for the img */
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+    height: 60px;
+    background-color: #fff;
+    transition: 0.5s;
+    overflow: hidden;
+
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .box:hover .content { /* makes the caption larger */
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .box .content h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .box .content p {
+    margin: 10px 0 0;
+    padding: 0;
+    opacity: 0; /* hide paragraph first */
+    line-height: 1.2em;
+    transition: 0.5s;
+    text-align: justify;
+  }
+
+  .box:hover .content p { /* shows paragraph */
+    opacity: 1;
+    transition-delay: 0.5s; /* delays show up */
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+
+    <div class="box">
+      <div class="imgBx">
+        <img src="img/images (6).jpeg" alt="">
+      </div>
+      <div class="content">
+        <h3>Post Title one</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nisi ex harum, tempora amet perferendis. Voluptas officia nostrum ipsam a fugiat cupiditate, facilis porro corrupti laboriosam harum ipsum eveniet alias.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minus aut inventore omnis deserunt quia recusandae laborum illum quam. Quaerat corrupti qui perferendis alias placeat, vero excepturi ut ullam corporis!
+        </p>
+      </div>
+    </div>
+
+    <div class="box">
+        <div class="imgBx">
+          <img src="img/images (6).jpeg" alt="">
+        </div>
+        <div class="content">
+          <h3>Post Title two</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nisi ex harum, tempora amet perferendis. Voluptas officia nostrum ipsam a fugiat cupiditate, facilis porro corrupti laboriosam harum ipsum eveniet alias.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minus aut inventore omnis deserunt quia recusandae laborum illum quam. Quaerat corrupti qui perferendis alias placeat, vero excepturi ut ullam corporis!
+          </p>
+        </div>
+      </div>
+
+      <div class="box">
+          <div class="imgBx">
+            <img src="img/images (6).jpeg" alt="">
+          </div>
+          <div class="content">
+            <h3>Post Title three</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nisi ex harum, tempora amet perferendis. Voluptas officia nostrum ipsam a fugiat cupiditate, facilis porro corrupti laboriosam harum ipsum eveniet alias.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minus aut inventore omnis deserunt quia recusandae laborum illum quam. Quaerat corrupti qui perferendis alias placeat, vero excepturi ut ullam corporis!
+            </p>
+          </div>
+        </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

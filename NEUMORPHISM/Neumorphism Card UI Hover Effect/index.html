@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ebf5fc;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1100px;
+  }
+
+  .container .card {
+    border-radius: 40px;
+    width: 320px;
+    margin: 20px;
+    padding: 40px 30px;
+    background-color: #ebf5fc;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+                6px 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .container .card:hover {
+    box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.5),
+                inset 6px 6px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .container .card .imgBx {
+    position: relative;
+    text-align: center;
+  }
+
+  .container .card .imgBx img {
+    max-width: 120px;
+  }
+
+  .container .card .contentBx {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .container .card .contentBx h2 {
+    color: #32a3b1;
+    font-weight: 700;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+  }
+
+  .container .card .contentBx p {
+    color: #32a3b1;
+  }
+
+  .container .card .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 40px;
+    color: #32a3b1;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: inset -4px -4px 15px rgba(255, 255, 255, 1),
+                inset 4px 4px 15px rgba(0, 0, 0, 0.1);box-shadow: -4px -4px 15px rgba(255, 255, 255, 1),
+                4px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .container .card .contentBx a:hover {
+    box-shadow: inset -4px -4px 10px rgba(255, 255, 255, 0.5),
+                inset 4px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .container .card a:hover span {
+    display: block;
+    transform: scale(0.98);
+  }
+
+  .container .card:hover .imgBx,
+  .container .card:hover .contentBx {
+    transform: scale(0.98);
+  }
+
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="img/design.png" alt="">
+      </div>
+      <div class="contentBx">
+        <h2>Design</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus maiores velit quas deleniti fugit inventore molestias! Nihil ut molestiae magnam?</p>
+        <a href="#"><span>Read More</span></a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="img/design.png" alt="">
+      </div>
+      <div class="contentBx">
+        <h2>Design</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus maiores velit quas deleniti fugit inventore molestias! Nihil ut molestiae magnam?</p>
+        <a href="#"><span>Read More</span></a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="img/design.png" alt="">
+      </div>
+      <div class="contentBx">
+        <h2>Design</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus maiores velit quas deleniti fugit inventore molestias! Nihil ut molestiae magnam?</p>
+        <a href="#"><span>Read More</span></a>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

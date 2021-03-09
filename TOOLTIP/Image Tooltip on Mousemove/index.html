@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .content {
+    position: relative;
+    max-width: 1000px;
+  }
+
+  .content h2 {
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 3em;
+    color: #fff;
+  }
+
+  .content p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 1.6em;
+  }
+
+  .content p span {
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .content p span .img {
+    position: absolute;
+    transform: translate(-105%, -125%);
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1;
+    width: 300px;
+  }
+
+  .content p span:hover .img {
+    visibility: visible;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="content">
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo labore praesentium quibusdam id consequatur veniam nemo sed ad veritatis quaerat.
+    <span>Pokemon<img class="img" src="https://i.pravatar.cc/300" alt=""></span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro est pariatur blanditiis? Voluptatem esse sunt nostrum suscipit ex, quas architecto vitae consequatur eos possimus sequi amet dolorem error animi unde!
+    <span>Pokemon<img class="img" src="https://i.pravatar.cc/300" alt=""></span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis explicabo praesentium possimus, officiis distinctio nesciunt voluptatem iure nulla assumenda sunt alias facilis omnis voluptates animi nisi aut sequi, beatae nostrum.
+    </p>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $('span').mousemove(function(e) {
+      let y = e.pageY - this.offsetTop;
+      let x = e.pageX - this.offsetLeft;
+      $('.img').css({
+        'left' : x + 'px',
+        'top' : y + 'px'
+      });
+    });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

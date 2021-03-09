@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="pagePiling.js-master/jquery.pagepiling.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /*
+    https://github.com/alvarotrigo/pagePiling.js
+    * RESPONSIVE: KINDA
+    * flexbox: NO
+    * floats: NO
+    * explicit specified units: YES
+    */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      /*outline: dashed thin;*/
+      box-sizing: border-box;
+    }
+
+    #pagepiling .section {
+      text-align: center;
+    }
+
+    #pagepiling .section h2 {
+      color: #fff;
+      font-size: 10em;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, .5);;
+    }
+
+    #pagepiling .section.sec1 {
+      background-image: url("img/1.jpeg");
+      background-size: cover;
+    }
+
+    #pagepiling .section.sec2 {
+      background-image: url("img/2.jpeg");
+      background-size: cover;
+    }
+
+    #pagepiling .section.sec3 {
+      background-image: url("img/3.jpeg");
+      background-size: cover;
+    }
+
+    #pagepiling .section.sec4 {
+      background-image: url("img/4.jpeg");
+      background-size: cover;
+    }
+
+    #pp-nav li .active span, .pp-slidesNav .active span { /* clicked the radio button and click inspect to get the specific selector */
+      background-color: #fff;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div id="pagepiling"> <!-- REQUIRED HTML STRUCTURE: read the docs for setting html tags -->
+    <div class="section sec1"><h2>Some section</h2></div>
+    <div class="section sec2"><h2>Some section</h2></div>
+    <div class="section sec3"><h2>Some section</h2></div>
+    <div class="section sec4"><h2>Some section</h2></div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="pagePiling.js-master/jquery.pagepiling.min.js"></script>
+  <script>
+  $(document).ready(function() { // REQUIRED INITIALIZATION: read the docs
+	  $('#pagepiling').pagepiling({
+      navigation: { // for more options and customization: READ THE DOCS
+        'textColor': '#fff',
+        'bulletsColor': '#fff',
+        'position': 'right',
+        'tooltips': ['section1', 'section2', 'section3', 'section4'] // change name here
+      }
+    });
+  });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

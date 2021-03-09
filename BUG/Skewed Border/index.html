@@ -1,0 +1,223 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #060c21;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container {
+    position: relative;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 0 40px;
+  }
+
+  .container .box {
+    position: relative;
+    height: 500px;
+    background-color: #060c21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+  }
+
+  .container .box::before { /* creates skewed box */
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background-color: #fff;
+    transform: skew(2deg, 2deg);
+    z-index: -1;
+  }
+
+  .container .box::after { /* adds shine effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .container .box:nth-child(1)::before {
+    background-image: linear-gradient(315deg, #ff0057, #e64a19);
+  }
+
+  .container .box:nth-child(2)::before {
+    background-image: linear-gradient(315deg, #89ff00, #00bcd4);
+  }
+
+  .container .box:nth-child(3)::before {
+    background-image: linear-gradient(315deg, #e91e63, #5d02ff);
+  }
+
+  .container .box:nth-child(4)::before {
+    background-image: linear-gradient(315deg, #ff0000, #ffc107);
+  }
+
+  .content {
+    position: relative;
+    padding: 20px;
+
+    transform: translateY(40px);
+  }
+
+  .box .content h2 {
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: rgba(255, 255, 255, .05);
+    transition: 0.5s;
+  }
+
+  .box:hover .content h2 { /* move text to the top */
+    top: -140px;
+  }
+
+  .box .content h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .box .content p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .box .content a {
+    position: relative;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    display: inline-block;
+    color: #fff;
+    transition: 0.5s;
+
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .box:hover .content a { /* shows read me.. back to its normal position */
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .box .content a:hover {
+    color: #000;
+    background-color: #fff;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="box">
+      <div class="content">
+        <h2>01</h2>
+        <h3>Service one</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur reiciendis deleniti odio saepe architecto, earum placeat quisquam culpa corporis, nisi beatae asperiores voluptas magnam debitis ullam accusantium porro reprehenderit iusto?</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="box">
+        <div class="content">
+          <h2>02</h2>
+          <h3>Service two</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur reiciendis deleniti odio saepe architecto, earum placeat quisquam culpa corporis, nisi beatae asperiores voluptas magnam debitis ullam accusantium porro reprehenderit iusto?</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+
+      <div class="box">
+          <div class="content">
+            <h2>03</h2>
+            <h3>Service three</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur reiciendis deleniti odio saepe architecto, earum placeat quisquam culpa corporis, nisi beatae asperiores voluptas magnam debitis ullam accusantium porro reprehenderit iusto?</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+              <h2>04</h2>
+              <h3>Service four</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur reiciendis deleniti odio saepe architecto, earum placeat quisquam culpa corporis, nisi beatae asperiores voluptas magnam debitis ullam accusantium porro reprehenderit iusto?</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

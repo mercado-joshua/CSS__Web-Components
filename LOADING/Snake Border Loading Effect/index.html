@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #03a9f4;
+  }
+
+  .loader { /*main container*/
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, .2);
+  }
+
+  .loader span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loader span:nth-child(1) {
+    transform: rotate(0deg);
+  }
+
+  .loader span:nth-child(2) { /*right vertical white bar*/
+    transform: rotate(90deg);
+  }
+
+  .loader span:nth-child(3) { /*bottom horizontal white bar*/
+    transform: rotate(180deg);
+  }
+
+  .loader span:nth-child(4) { /*left vertical white bar*/
+    transform: rotate(270deg);
+  }
+
+  .loader span::before { /*top horizontal white bar*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    transform: scale(0); /* hides white bars */
+    animation: animate 2s linear infinite;
+  }
+
+  /* delays animation... makes circular effect */
+  .loader span:nth-child(1)::before {
+    animation-delay: 0s;
+  }
+
+  .loader span:nth-child(2)::before {
+    animation-delay: 0.5s;
+  }
+
+  .loader span:nth-child(3)::before {
+    animation-delay: 1s;
+  }
+
+  .loader span:nth-child(4)::before {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    25% {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    25.00001% {
+      transform-origin: right;
+    }
+
+    50%, 100% {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

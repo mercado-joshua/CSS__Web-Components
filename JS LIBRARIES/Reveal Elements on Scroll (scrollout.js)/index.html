@@ -1,0 +1,232 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626;
+    color: #fff;
+  }
+
+  section .content {
+    max-width: 80%;
+  }
+
+  section .content h2 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 3em;
+    transition: 0.5s;
+
+    transform-origin: left; /* starts to scale from left */
+    transform: scaleX(0);
+  }
+
+  /* check in the inspector */
+  section .content h2[data-scroll="in"] {
+    transform: scaleX(1); /* covers the text with block*/
+  }
+
+  section .content h2::before { /* creates box that hides the text */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e02bff;
+
+    transform-origin: right; /* starts to scale from right */
+    transition: 0.5s;
+  }
+
+  /* check in the inspector */
+  section .content h2[data-scroll="in"]::before {
+    transform: scaleX(0); /* shows the text from block */
+    transition-delay: 0.5s;
+  }
+
+  section .content h3 {
+    position: relative;
+    margin: 5px 0 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 2em;
+    transition: 0.5s;
+
+    transform-origin: right; /* starts to scale from right */
+    transform: scaleX(0);
+  }
+
+  /* check in the inspector */
+  section .content h3[data-scroll="in"] {
+    transform: scaleX(1); /* covers the text with block */
+    transition-delay: 1s;
+  }
+
+  section .content h3::before { /* creates box that hides the text */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffeb3b;
+
+    transform-origin: left; /* starts to scale from left */
+    transition: 0.5s;
+  }
+
+  /* check in the inspector */
+  section .content h3[data-scroll="in"]::before {
+    transform: scaleX(0); /* shows the text from block */
+    transition-delay: 1.5s;
+  }
+
+  section .content p {
+    font-size: 1.2em;
+    transition: 1s;
+    opacity: 0;
+  }
+
+  /* check in the inspector */
+  section .content p[data-scroll="in"]{
+    opacity: 1;
+    transition-delay: 1s;
+  }
+
+  section .content a {
+    position: relative;
+    background-color: #fff;
+    color: #262626;
+    padding: 15px 30px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 1s;
+
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  /* check in the inspector */
+  section .content a[data-scroll="in"]{
+    transform: translateX(0);
+    transition-delay: 1s;
+    opacity: 1;
+  }
+  section .content  {
+    font-size: 1.2em;
+    transition: 1s;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <section>
+    <div class="content">
+      <h2>Section One Text Block Reveal</h2>
+      <h3>Text Block Reveal On Page Scroll</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus facere cupiditate necessitatibus suscipit autem at amet, laboriosam est quo eveniet, consequatur aliquid, ex maiores sapiente earum sint corrupti rem accusantium?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ex ad ullam nisi eveniet. Corrupti obcaecati dignissimos maiores ratione? Quo voluptates dolores inventore quam. Minima suscipit architecto cum veniam eaque!</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+  <section>
+    <div class="content">
+      <h2>Section Two Text Block Reveal</h2>
+      <h3>Text Block Reveal On Page Scroll</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus facere cupiditate necessitatibus suscipit autem at amet, laboriosam est quo eveniet, consequatur aliquid, ex maiores sapiente earum sint corrupti rem accusantium?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ex ad ullam nisi eveniet. Corrupti obcaecati dignissimos maiores ratione? Quo voluptates dolores inventore quam. Minima suscipit architecto cum veniam eaque!</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+  <section>
+    <div class="content">
+      <h2>Section Three Text Block Reveal</h2>
+      <h3>Text Block Reveal On Page Scroll</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus facere cupiditate necessitatibus suscipit autem at amet, laboriosam est quo eveniet, consequatur aliquid, ex maiores sapiente earum sint corrupti rem accusantium?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ex ad ullam nisi eveniet. Corrupti obcaecati dignissimos maiores ratione? Quo voluptates dolores inventore quam. Minima suscipit architecto cum veniam eaque!</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+  <section>
+    <div class="content">
+      <h2>Section Four Text Block Reveal</h2>
+      <h3>Text Block Reveal On Page Scroll</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus facere cupiditate necessitatibus suscipit autem at amet, laboriosam est quo eveniet, consequatur aliquid, ex maiores sapiente earum sint corrupti rem accusantium?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ex ad ullam nisi eveniet. Corrupti obcaecati dignissimos maiores ratione? Quo voluptates dolores inventore quam. Minima suscipit architecto cum veniam eaque!</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+  <section>
+    <div class="content">
+      <h2>Section Five Text Block Reveal</h2>
+      <h3>Text Block Reveal On Page Scroll</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus facere cupiditate necessitatibus suscipit autem at amet, laboriosam est quo eveniet, consequatur aliquid, ex maiores sapiente earum sint corrupti rem accusantium?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ex ad ullam nisi eveniet. Corrupti obcaecati dignissimos maiores ratione? Quo voluptates dolores inventore quam. Minima suscipit architecto cum veniam eaque!</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="libs/scroll-out-master/dist/scroll-out.min.js"></script>
+  <script>
+    ScrollOut({
+      targets: 'h2, h3, p, a'
+    });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

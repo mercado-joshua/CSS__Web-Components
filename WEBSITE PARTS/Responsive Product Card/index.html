@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  /*
+  * RESPONSIVE: YES
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  *,
+  *::before,
+  *::after {
+    /*outline: dashed thin;*/
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #070c24;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 900px;
+    height: 600px;
+    background-color: #fff;
+    margin: 20px;
+  }
+
+  .imgBx {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: #006dbc;
+  }
+
+  .imgBx img {
+    position: relative;
+    width: 700px;
+    transform: rotate(-30deg);
+    left: -50px;
+  }
+
+  .imgBx::before {
+    content: "Nike";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #000;
+    opacity: 0.1;
+    font-size: 8em;
+    font-weight: 800;
+  }
+
+  .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+  }
+
+  .details h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5em;
+    line-height: 0.8em;
+    color: #444;
+  }
+
+  .details span {
+    font-size: 0.4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+  }
+
+  .details p {
+    max-width: 85%;
+    margin-left: 15%;
+    color: #333;
+    font-size: 15px;
+  }
+
+  .details h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5em;
+    color: #a2a2a2;
+    float: left;
+  }
+
+  .details button {
+    background-color: #006dbc;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 15px 20px;
+    margin-top: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 40px;
+    float: right;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1080px) {
+    .container {
+      height: auto;
+    }
+
+    .imgBx {
+      padding: 40px;
+      box-sizing: border-box;
+      width: 100% !important;
+      height: auto;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .imgBx img {
+      left: initial;
+      max-width: 100%;
+      transform: rotate(0deg);
+    }
+
+    .details {
+      width: 100% !important;
+      height: auto;
+      padding: 20px;
+    }
+
+    .details p {
+      max-width: 100%;
+      margin-left: 0;
+      color: #333;
+      font-size: 15px;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="imgBx">
+      <img arial-label="shoe pic" src="img/shoe.png" alt="shoe pic">
+    </div>
+    <div class="details">
+      <div class="content">
+        <h2>Nike Air Max 270 <br><span>Running Collection</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto neque, et recusandae tempore est id fuga perspiciatis eius, consequatur ipsum ad! Non alias voluptate itaque hic ad eius neque porro.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam earum, explicabo in laborum aut ducimus? Laborum minima earum rem asperiores voluptate incidunt voluptatem dolorem dolorum a! Non quod ullam libero.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus amet, explicabo quibusdam tempora ad cumque illum ex dignissimos similique adipisci eius eligendi minima tenetur ratione distinctio, quia quas cupiditate aut.
+        </p>
+        <h3>$150.99</h3>
+        <button>Buy now</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

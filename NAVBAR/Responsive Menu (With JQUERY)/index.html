@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      /*outline: dashed thin;*/
+    }
+
+    /*
+       * RESPONSIVE: KINDA
+       * flexbox: NO
+       * floats: NO
+       * explicit specified units: YES
+       */
+
+    body {
+      background: #ddd;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    nav {
+      width: 100%;
+      background-color: #00316b;
+    }
+
+    ul {
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 20px;
+    }
+
+    ul li:hover {
+      background-color: #e91e63;
+    }
+
+    ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .toggle {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #001f44;
+      text-align: right;
+      box-sizing: border-box;
+      color: #fff;
+      font-size: 30px;
+
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .toggle {
+        display: block;
+      }
+
+      ul {
+        width: 100%;
+        display: none;
+      }
+
+      ul li {
+        display: block;
+        text-align: center;
+      }
+
+      .active {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <nav>
+    <div class="toggle"><i class="fa fa-bars menu" aria-hidden="true"></i></div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  $(document).ready(function() {
+    $(".menu").click(function() {
+      $("ul").toggleClass("active");
+    });
+  });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

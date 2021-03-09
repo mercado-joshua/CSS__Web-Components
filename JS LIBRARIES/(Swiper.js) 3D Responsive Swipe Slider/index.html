@@ -1,0 +1,215 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="libs/swiper-4.5.2/dist/css/swiper.min.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #383838;
+  }
+
+  .card {
+    position: relative;
+    background-color: #fff;
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+  }
+
+  .card .content {
+    width: 400px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .card .content a {
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 600;
+  }
+
+  .card .sliderText {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+
+  .card .sliderText h3 {
+    color: #fff;
+    font-size: 3em;
+  }
+
+  .swiper-slide { /* fix width */
+    width: 400px;
+  }
+
+  .swiper-slide:nth-child(1) .sliderText {
+    background-color: #2196f3;
+  }
+
+  .swiper-slide:nth-child(2) .sliderText {
+    background-color: #e91e63;
+  }
+
+  .swiper-slide:nth-child(3) .sliderText {
+    background-color: #c3d41a;
+  }
+
+  .swiper-slide:nth-child(4) .sliderText {
+    background-color: #c33ada;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <!-- go to swiper official page ...demos... to download html source -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="sliderText">
+            <h3>Slide One</h3>
+          </div>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, animi officiis perferendis sequi
+              nesciunt
+              magnam omnis necessitatibus blanditiis ad facilis! Nihil ducimus laboriosam itaque odit, fugit quos
+              distinctio commodi dolorem?</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+          <div class="card">
+            <div class="sliderText">
+              <h3>Slide Two</h3>
+            </div>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, animi officiis perferendis sequi
+                nesciunt
+                magnam omnis necessitatibus blanditiis ad facilis! Nihil ducimus laboriosam itaque odit, fugit quos
+                distinctio commodi dolorem?</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+            <div class="card">
+              <div class="sliderText">
+                <h3>Slide Three</h3>
+              </div>
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, animi officiis perferendis sequi
+                  nesciunt
+                  magnam omnis necessitatibus blanditiis ad facilis! Nihil ducimus laboriosam itaque odit, fugit quos
+                  distinctio commodi dolorem?</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+              <div class="card">
+                <div class="sliderText">
+                  <h3>Slide Four</h3>
+                </div>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, animi officiis perferendis sequi
+                    nesciunt
+                    magnam omnis necessitatibus blanditiis ad facilis! Nihil ducimus laboriosam itaque odit, fugit quos
+                    distinctio commodi dolorem?</p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+    </div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="libs/swiper-4.5.2/dist/js/swiper.min.js"></script>
+  <script>
+  // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

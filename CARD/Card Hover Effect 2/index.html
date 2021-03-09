@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(45deg, #24006b, #f42f8c);
+  }
+
+  .container { /* main container */
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+  }
+
+  .container .card { /*per card*/
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 15px 60px rgba(0,0,0,.5);
+  }
+
+  .container .card .face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+  }
+
+  .container .card .face.face1 {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .container .card .face.face1 h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container .card .face.face2 { /* front layer */
+    background-color: #111;
+    transition: 0.5s;
+  }
+
+  .container .card:hover .face.face2 { /*downs the front layer when hover*/
+    height: 60px;
+  }
+
+  .container .card .face.face2::before { /* creates shine effect on the front layer */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255,255,255,.1);
+  }
+
+  .container .card .face.face2 h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: #fff;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,.2);
+  }
+
+  .container .card:nth-child(1) .face.face2 { /* change background of card 1 */
+    background-image: linear-gradient(45deg, #3503ad, #f7308c);
+  }
+
+  .container .card:nth-child(2) .face.face2 { /* change background of card 2 */
+    background-image: linear-gradient(45deg, #ccff00, #09afff);
+  }
+
+  .container .card:nth-child(3) .face.face2 { /* change background of card 3 */
+    background-image: linear-gradient(45deg, #e91e63, #ffeb3b);
+  }
+
+  .container .card:hover .face.face2 h2 { /*shrinks the text when hover*/
+    font-size: 2em;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="card">
+      <div class="face face1">
+        <h2>Hello world</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio odit repellendus nobis dignissimos officia, vel ea nam quae quidem dolorem eveniet! Rerum, consectetur doloremque at quis quod ab harum.</p>
+      </div>
+      <div class="face face2">
+        <h2>01</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face face1">
+        <h2>Hello world</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio odit repellendus nobis dignissimos officia, vel ea nam quae quidem dolorem eveniet! Rerum, consectetur doloremque at quis quod ab harum.</p>
+      </div>
+      <div class="face face2">
+        <h2>02</h2>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="face face1">
+        <h2>Hello world</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet distinctio odit repellendus nobis dignissimos officia, vel ea nam quae quidem dolorem eveniet! Rerum, consectetur doloremque at quis quod ab harum.</p>
+      </div>
+      <div class="face face2">
+        <h2>03</h2>
+      </div>
+    </div>
+
+
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

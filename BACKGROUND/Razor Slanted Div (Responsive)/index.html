@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: NO
+  * floats: NO
+  * explicit specified units: YES
+  */
+  *,
+  *::before,
+  *::after {
+    /*outline: dashed thin;*/
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    width: 100%;
+    height: 100vh;
+  }
+
+  section.sec1 {
+    position: relative;
+    overflow: hidden;
+    background-image: url("img/1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  section.sec1::before { /* for left slanted */
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform-origin: right;
+    transform: skewY(8deg);
+  }
+
+  section.sec1::after { /* for right slanted */
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform-origin: left;
+    transform: skewY(-8deg);
+  }
+
+  section.sec3 {
+    position: relative;
+    overflow: hidden;
+    background-image: url("img/2.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  section.sec3::before { /* for left slanted */
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform-origin: left;
+    transform: skewY(4deg);
+  }
+
+  section.sec2 {
+    height: auto;
+    padding: 100px;
+    box-sizing: border-box;
+  }
+
+  section.sec2 h1 {
+    margin: 50px 0 20px;
+    padding: 0;
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 48px;
+  }
+
+  section.sec2 p {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #262626;
+    font-size: 20px;
+  }
+
+
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <section class="sec1"></section>
+  <section class="sec2">
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae autem, ratione iste, dolores voluptatum error adipisci voluptas fugiat dolorum repellendus, dolorem ipsam nobis quisquam quidem debitis. Unde, quas. Blanditiis, aliquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni officiis sed quos dolore nemo iusto et ab iste quae sunt natus libero error velit architecto, doloribus odit dicta atque a.</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae autem, ratione iste, dolores voluptatum error adipisci voluptas fugiat dolorum repellendus, dolorem ipsam nobis quisquam quidem debitis. Unde, quas. Blanditiis, aliquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni officiis sed quos dolore nemo iusto et ab iste quae sunt natus libero error velit architecto, doloribus odit dicta atque a.</p>
+  </section>
+  <section class="sec3"></section>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .container .box {
+    position: relative;
+    width: 350px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    border-radius: 4px;
+    margin: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .container .box::before { /* creates shine effect */
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.2);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .container .box .icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 1s;
+  }
+
+  .container .box:nth-child(1) .icon { /* add color to the icon */
+    box-shadow: 0 0 0 0 #e91e63;
+    background-color: #e91e63;
+  }
+
+  .container .box:nth-child(1):hover .icon { /* covers whole box when hover */
+    box-shadow: 0 0 0 400px #e91e63;
+  }
+
+  .container .box:nth-child(2) .icon { /* add color to the icon */
+    box-shadow: 0 0 0 0 #23e629;
+    background-color: #23e629;
+  }
+
+  .container .box:nth-child(2):hover .icon { /* covers whole box when hover */
+    box-shadow: 0 0 0 400px #23e629;
+  }
+
+  .container .box:nth-child(3) .icon { /* add color to the icon */
+    box-shadow: 0 0 0 0 #2196f3;
+    background-color: #2196f3;
+  }
+
+  .container .box:nth-child(3):hover .icon { /* covers whole box when hover */
+    box-shadow: 0 0 0 400px #2196f3;
+  }
+
+  .container .box .content { /* shows text */
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  .container .box:hover .content {
+    color: #fff;
+  }
+
+  .container .box .content h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 0;
+  }
+
+  .container .box .content p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="box">
+      <div class="icon">01</div>
+      <div class="content">
+        <h3>Services Name</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quis eveniet in inventore cum quo quidem minus optio molestias. Nobis?</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+
+    <div class="box">
+      <div class="icon">02</div>
+      <div class="content">
+        <h3>Services Name</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quis eveniet in inventore cum quo quidem minus optio molestias. Nobis?</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="icon">03</div>
+      <div class="content">
+        <h3>Services Name</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quis eveniet in inventore cum quo quidem minus optio molestias. Nobis?</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

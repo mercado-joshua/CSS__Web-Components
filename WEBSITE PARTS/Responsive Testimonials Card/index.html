@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #262626;
+  }
+
+  .testimonials { /* main container */
+    margin: 200px auto 100px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .testimonials .card { /* per card */
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    overflow: hidden;
+  }
+
+  .testimonials .card .layer { /* layer effect */
+    position: absolute;
+    top: calc(100% - 2px); /* minus 2px  */
+    left: 0;
+    background-image: linear-gradient(#03a9f4, #e91ee3);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  .testimonials .card:hover .layer { /* shows layer */
+    top: 0;
+  }
+
+  .testimonials .card .content {
+    z-index: 2;
+    position: relative; /* to appear first before the gradient */
+  }
+
+  .testimonials .card .content p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+  }
+
+  .testimonials .card .content .image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  }
+
+  .testimonials .card .content .details h2 {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .testimonials .card .content .details h2 span {
+    color: #03a9f4;
+    font-size: 14px;
+    transition: 0.5s;
+  }
+
+  .testimonials .card:hover .content .details h2 span {
+    color: #fff;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="testimonials">
+    <div class="card">
+      <div class="layer"></div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod ullam voluptatem? Enim velit facilis quaerat laudantium ullam in, consectetur eligendi nisi aliquam quis. Non, optio dolorum? Ea, facere recusandae!</p>
+        <div class="image">
+          <img src="https://i.pravatar.cc/300" alt="">
+        </div>
+        <div class="details">
+          <h2>Someone Famous<br><span>Website Designer</span></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="layer"></div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod ullam voluptatem? Enim velit facilis quaerat laudantium ullam in, consectetur eligendi nisi aliquam quis. Non, optio dolorum? Ea, facere recusandae!</p>
+        <div class="image">
+          <img src="https://i.pravatar.cc/300" alt="">
+        </div>
+        <div class="details">
+          <h2>Someone Famous<br><span>Web Developer</span></h2>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="layer"></div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod ullam voluptatem? Enim velit facilis quaerat laudantium ullam in, consectetur eligendi nisi aliquam quis. Non, optio dolorum? Ea, facere recusandae!</p>
+        <div class="image">
+          <img src="https://i.pravatar.cc/300" alt="">
+        </div>
+        <div class="details">
+          <h2>Someone Famous<br><span>Database Administrator</span></h2>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

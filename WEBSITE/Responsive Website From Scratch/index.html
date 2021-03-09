@@ -1,0 +1,494 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container { /* main container */
+    position: relative;
+    padding: 0 100px;
+    min-height: 100vh;
+  }
+
+  .container::before { /* thick right bar design */
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background-color: #333;
+    z-index: -2;
+  }
+
+  .container::after { /* create "Healthy" design text */
+    content: "Healthy";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    font-weight: 700;
+    color: #000;
+    opacity: 0.04;
+
+    font-size: 18vw;
+  }
+
+  header { /* header container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 0;
+  }
+
+  header .logo { /* logo */
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+    font-size: 30px;
+  }
+
+  header .logo span {
+    color: #78ff00;
+  }
+
+  header ul { /* nav links */
+    position: relative;
+    display: flex;
+  }
+
+  header ul li {
+    list-style: none;
+    margin: 0 20px;
+  }
+
+  header ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  header ul li:nth-child(3) a,
+  header ul li:nth-child(4) a { /* change nav links color */
+    color: #fff;
+  }
+
+  header ul li a::before { /* highlight nav link effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #78ff00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+  }
+
+  header ul li a:hover::before,
+  header ul li a.active::before {
+    width: 40px;
+  }
+
+  .content { /* content container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .content .bannerText { /* content text */
+    position: relative;
+    max-width: 500px;
+    margin-right: 50px;
+  }
+
+  .content .bannerText div { /* hide the content text */
+    display: none;
+  }
+
+  .content .bannerText div.active { /* show the current content text */
+    display: initial;
+  }
+
+  .content .bannerText h2 {
+    font-size: 54px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: #333;
+  }
+
+  .content .bannerText p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8em;
+    margin: 20px 0;
+  }
+
+  .content .bannerText a {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px;
+  }
+
+  .content .bannerText a::before { /* highlight read more link effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background-color: #78ff00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+  }
+
+  .content .bannerText a:hover::before {
+    width: 100%;
+  }
+
+  .content .bannerImg { /* content img */
+    position: relative;
+    width: 440px;
+    height: 440px;
+    background-color: #000;
+  }
+
+  .content .bannerImg img {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+
+    opacity: 0; /* hide the images */
+  }
+
+  .content .bannerImg img.active { /* show the current image */
+    opacity: 1;
+  }
+
+  .icons { /* icons container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .icons .sci,
+  .icons .controls {
+    position: relative;
+    display: flex;
+  }
+
+  .icons .sci li { /* left group icons */
+    list-style: none;
+    margin-right: 30px;
+  }
+
+  .icons .sci li img {
+    display: inline-block;
+    max-height: 24px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .icons .sci li:hover img {
+    transform: translateY(-10px);
+  }
+
+  .icons .controls li { /* right group icons */
+    list-style: none;
+    margin-right: 20px;
+    cursor: pointer;
+    filter: invert(1);
+    transition: 0.5s ease-in-out;
+  }
+
+  .icons .controls li img {
+    display: inline-block;
+    max-height: 50px;
+  }
+
+  .icons .controls li:hover {
+    opacity: 0.5;
+  }
+
+  .menuIcon {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .container {
+      padding: 20px 50px;
+    }
+
+    .container::before { /* remove right bar design */
+      display: none;
+    }
+
+    header {
+      padding: 0;
+    }
+
+    .icons .controls li {
+      filter: invert(0);
+    }
+
+    .content .bannerText h2 {
+      font-size: 30px;
+    }
+
+    .content {
+      margin-top: 0;
+      flex-direction: column-reverse; /* shows image over text */
+    }
+
+    .content .bannerImg { /* content image */
+      width: 100%;
+      height: 40vh;
+      margin: 20px 0;
+    }
+
+    .content .bannerText {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    header ul { /* vertical nav bar */
+      display: none; /* HIDE BY DEFAULT */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #fff;
+      z-index: 1000;
+      padding: 100px 0;
+    }
+
+    header.active ul {
+      display: initial;
+    }
+
+    header ul li {
+      padding: 20px;
+      text-align: center;
+    }
+
+    header ul li a {
+      color: #333 !important;
+      font-size: 36px;
+    }
+
+    header ul li a:hover::before,
+    header ul li a.active::before {
+      width: 100%;
+    }
+
+    .menuIcon { /* hamburger icon */
+      display: initial;
+      position: fixed;
+      right: 50px;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 100000;
+      background: #fff url("img/menu-of-three-lines.png");
+      width: 34px;
+      height: 34px;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      background-position: center;
+    }
+
+    header.active .menuIcon { /* close icon */
+      background: #fff url("img/multiplication.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      padding: 20px 30px;
+    }
+
+    .menuIcon {
+      right: 30px;
+    }
+
+    .icons .controls li img { /* makes images smaller */
+      max-width: 40px;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <header id="navbar">
+      <a href="#" class="logo">Good<span>Foods</span></a>
+
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <span class="menuIcon" onclick="menuToggle();"></span>
+
+    </header>
+
+    <div class="content">
+      <div class="bannerText" id="slideshowText">
+        <div class="active">
+          <h2>Eat Healthy<br>Stay Healthy</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reprehenderit officiis porro totam et ad molestias tenetur nesciunt error qui eaque blanditiis ipsum, nemo delectus consequatur. Temporibus quia non aperiam maiores nihil quis iure cupiditate, ullam iusto, doloremque distinctio illum alias, cumque repellendus a! Similique blanditiis qui omnis distinctio quo!</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div>
+          <h2>Eat Green<br>Leafy Veggies</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reprehenderit officiis porro totam et ad molestias tenetur nesciunt error qui eaque blanditiis ipsum, nemo delectus consequatur. Temporibus quia non aperiam maiores nihil quis iure cupiditate, ullam iusto, doloremque distinctio illum alias, cumque repellendus a! Similique blanditiis qui omnis distinctio quo!</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div>
+          <h2>Good Food<br>Good Mood</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reprehenderit officiis porro totam et ad molestias tenetur nesciunt error qui eaque blanditiis ipsum, nemo delectus consequatur. Temporibus quia non aperiam maiores nihil quis iure cupiditate, ullam iusto, doloremque distinctio illum alias, cumque repellendus a! Similique blanditiis qui omnis distinctio quo!</p>
+          <a href="#">Read More</a>
+        </div>
+
+      </div>
+
+      <div class="bannerImg" id="slideshow">
+        <img class="active" src="img/vegetable-salad-on-white-plate-2862154.jpg" alt="">
+
+        <img src="img/sliced-tomato-and-avocado-on-white-plate-1143754.jpg" alt="">
+
+        <img src="img/appetizer-close-up-cuisine-delicious-434258.jpg" alt="">
+      </div>
+
+    </div>
+
+
+    <div class="icons">
+      <ul class="sci">
+        <li><a href="#"><img src="img/facebook-logo.png" alt=""></a></li>
+        <li><a href="#"><img src="img/twitter.png" alt=""></a></li>
+        <li><a href="#"><img src="img/instagram.png" alt=""></a></li>
+      </ul>
+
+      <ul class="controls">
+        <li><a href="#"><img src="img/left-chevron.png" alt="" onclick="prevSlide();prevSlideText()"></a></li>
+        <li><a href="#"><img src="img/right-chevron.png" alt="" onclick="nextSlide();nextSlideText()"></a></li>
+      </ul>
+    </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let slideshow = document.getElementById('slideshow');
+    let slides = slideshow.getElementsByTagName('img');
+    let index = 0;
+
+    function nextSlide() {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }
+
+    function prevSlide() {
+      slides[index].classList.remove('active');
+      index = (index - 1 + slides.length) % slides.length;
+      slides[index].classList.add('active');
+    }
+
+    let slideshowText = document.getElementById('slideshowText');
+    let slidesText = slideshowText.getElementsByTagName('div');
+    let indexText = 0;
+
+    function nextSlideText() {
+      slidesText[indexText].classList.remove('active');
+      indexText = (indexText + 1) % slidesText.length;
+      slidesText[indexText].classList.add('active');
+    }
+
+    function prevSlideText() {
+      slidesText[indexText].classList.remove('active');
+      indexText = (indexText - 1 + slidesText.length) % slidesText.length;
+      slidesText[indexText].classList.add('active');
+    }
+
+    // menu toggle
+    function menuToggle() {
+      let nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

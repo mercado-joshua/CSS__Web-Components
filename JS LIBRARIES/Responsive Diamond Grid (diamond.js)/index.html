@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="libs/Fancy-Responsive-jQuery-Diamond-Layout-Plugin-diamonds-js/src/diamonds.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+  }
+
+  .diamond-grid {
+    width: 70%;
+    margin: 150px auto 0;
+  }
+
+  .item {
+    width: 220px; /* check also the javascript value */
+    height: 220px;
+    background-color: #fff;
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+
+  .item:hover {
+    opacity: 1;
+  }
+
+  .item img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scale(1.5);
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .diamond-grid {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="diamond-grid">
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+    <div class="item"><img src="https://i.pravatar.cc/300" alt=""></div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="libs/Fancy-Responsive-jQuery-Diamond-Layout-Plugin-diamonds-js/src/jquery.diamonds.js"></script>
+  <script>
+
+    // check the jQuery plugin site
+    $(".diamond-grid").diamonds({
+        size : 220,// Size of diamonds in pixels. Both width and height. // adjust also in the css
+        gap : 5,// Pixels between each square.
+        hideIncompleteRow :false,// Hide last row if there are not enough items to fill it completely.
+        autoRedraw :true,// Auto redraw diamonds when it detects resizing.
+        itemSelector :".item" // the css selector to use to select diamonds-items.
+    });
+  </script>
+
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

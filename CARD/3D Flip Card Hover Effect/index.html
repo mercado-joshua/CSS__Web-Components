@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card {
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+
+    box-shadow: inset 300px 0 50px rgba(0,0,0,.5);
+  }
+
+  .card:hover { /* slant card when hover */
+    z-index: 1000;
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0,0,0,.5);
+  }
+
+  .card .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+  }
+
+  .card:hover .imgBox { /* creates flip book effect */
+    transform: rotateY(-135deg);
+  }
+
+  .card .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card .details { /* put text back to place in the card */
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="card">
+      <div class="imgBox">
+        <img src="https://i.pravatar.cc/300" alt="">
+      </div>
+      <div class="details">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis saepe et pariatur distinctio vitae facilis asperiores? Esse fugiat quos, quas doloremque explicabo perspiciatis atque, ex commodi accusantium quisquam aliquam?</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBox">
+        <img src="https://i.pravatar.cc/300" alt="">
+      </div>
+      <div class="details">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis saepe et pariatur distinctio vitae facilis asperiores? Esse fugiat quos, quas doloremque explicabo perspiciatis atque, ex commodi accusantium quisquam aliquam?</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBox">
+        <img src="https://i.pravatar.cc/300" alt="">
+      </div>
+      <div class="details">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis saepe et pariatur distinctio vitae facilis asperiores? Esse fugiat quos, quas doloremque explicabo perspiciatis atque, ex commodi accusantium quisquam aliquam?</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBox">
+        <img src="https://i.pravatar.cc/300" alt="">
+      </div>
+      <div class="details">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis saepe et pariatur distinctio vitae facilis asperiores? Esse fugiat quos, quas doloremque explicabo perspiciatis atque, ex commodi accusantium quisquam aliquam?</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBox">
+        <img src="https://i.pravatar.cc/300" alt="">
+      </div>
+      <div class="details">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis saepe et pariatur distinctio vitae facilis asperiores? Esse fugiat quos, quas doloremque explicabo perspiciatis atque, ex commodi accusantium quisquam aliquam?</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBox">
+        <img src="https://i.pravatar.cc/300" alt="">
+      </div>
+      <div class="details">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nobis saepe et pariatur distinctio vitae facilis asperiores? Esse fugiat quos, quas doloremque explicabo perspiciatis atque, ex commodi accusantium quisquam aliquam?</p>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

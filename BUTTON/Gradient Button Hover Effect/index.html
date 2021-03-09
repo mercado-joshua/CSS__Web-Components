@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 480px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .container a { /* the button */
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #fff;
+    transition: 0.5s;
+  }
+
+  /* button colors */
+  .container a:nth-child(1) {
+    background-image: linear-gradient(to right, #a18cd1, #fbc2eb, #a18cd1);
+    background-size: 200%;
+  }
+
+  .container a:nth-child(2) {
+    background-image: linear-gradient(to right, #43e97b, #38f9d7, #a18cd1);
+    background-size: 200%;
+  }
+
+  .container a:nth-child(3) {
+    background-image: linear-gradient(to right, #fa709a, #fee140, #fa709a);
+    background-size: 200%;
+  }
+
+  .container a:nth-child(4) {
+    background-image: linear-gradient(to right, #4481eb, #fbc2eb, #4481eb);
+    background-size: 200%;
+  }
+
+  .container a:nth-child(5) {
+    background-image: linear-gradient(to right, #ffe29f, #ffa99f, #ffe29f);
+    background-size: 200%;
+  }
+
+  .container a:nth-child(6) {
+    background-image: linear-gradient(to right, #fdfc47, #24fe41, #fdfc47);
+    background-size: 200%;
+  }
+
+  .container a:hover { /* activates effects when hover*/
+    background-position-x: 100%;
+    transform: translateY(-15px);
+  }
+
+  .container a::after { /* creates shine effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255,255,255,.2);
+  }
+
+  .container a::before { /* creates bottom border.. turn into drop shadow effect... hide first */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 50%;
+    filter: blur(5px);
+    transform: scale(0);
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  .container a:hover::before { /* shows the shadow */
+    transform: scale(1);
+    bottom: -15px;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <a href="#">Button</a>
+    <a href="#">Button</a>
+    <a href="#">Button</a>
+    <a href="#">Button</a>
+    <a href="#">Button</a>
+    <a href="#">Button</a>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

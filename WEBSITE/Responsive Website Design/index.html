@@ -1,0 +1,318 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+    margin: 0;
+    padding: 0;
+
+    scroll-behavior: smooth;
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    z-index: 1000;
+  }
+
+  header .logo {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  header ul {
+    position: relative;
+    display: flex;
+  }
+
+  header ul li {
+    position: relative;
+    list-style: none;
+  }
+
+  header ul li a {
+    position: relative;
+    padding: 5px 10px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  header ul li a.active,
+  header ul li a:hover {
+    background-color: #205aff;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+  }
+
+  section img {
+    max-width: 350px;
+    margin-left: 30px;
+  }
+
+  section h2 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+  }
+
+  section p {
+    font-size: 18px;
+  }
+
+  section a {
+    display: inline-block;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #111;
+    color: #fff;
+    margin-top: 20px;
+  }
+
+  section:nth-child(odd) { /* change background of section */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    color: #fff;
+  }
+
+  @media (max-width: 992px) {
+    header ul { /* create vertical column */
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      padding: 50px 100px;
+      text-align: center;
+      overflow: hidden;
+      transition: 0.5s;
+      background-color: #111;
+      flex-direction: column;
+      transform: translateY(-100%); /* hide navigation bar */
+      opacity: 0;
+    }
+
+    header.active ul { /* brings navigation bar to normal */
+      top: 80px;
+      opacity: 1;
+      transform: translateY(0);
+
+    }
+
+    header ul li a {
+      margin: 5px 0;
+      font-size: 24px;
+    }
+
+    .toggle {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .toggle::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      width: 100%;
+      height: 2px; /* creates 1st bar */
+      background-color: #fff;
+      z-index: 1;
+      box-shadow: 0 10px 0 #fff; /* creates 2nd bar */
+      transition: 0.5s;
+    }
+
+    .toggle::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      width: 100%;
+      height: 2px; /* creates 3rd bar */
+      background-color: #fff;
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    header.active .toggle::before { /* left slanted X */
+      top: 14px;
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 #fff;
+    }
+
+    header.active .toggle::after { /* right slanted X */
+      bottom: 14px;
+      transform: rotate(-45deg);
+    }
+
+    section { /* make text and image stacked */
+      padding: 100px 50px 50px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    section img {
+      margin: 50px 0 0;
+      max-width: 100%;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <header id="header">
+    <a href="#" class="logo">LOGO</a>
+    <ul>
+      <li><a href="#home" onclick="toggle()" class="active">Home</a></li>
+      <li><a href="#about" onclick="toggle()">About</a></li>
+      <li><a href="#services" onclick="toggle()">Service</a></li>
+      <li><a href="#portfolio" onclick="toggle()">Portfolio</a></li>
+      <li><a href="#team" onclick="toggle()">Team</a></li>
+      <li><a href="#contact" onclick="toggle()">Contact</a></li>
+    </ul>
+
+    <div class="toggle" onclick="toggle()"></div>
+  </header>
+
+  <section id="home">
+    <div>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo quia! Vitae eligendi animi aperiam iste? Modi repellendus aspernatur vel in perspiciatis cumque adipisci assumenda, ratione ex tempora. Fuga ullam minima quibusdam, earum odit tenetur neque culpa molestias repellat temporibus.</p>
+      <a href="#">Read more</a>
+    </div>
+
+    <img src="https://i.pravatar.cc/300" alt="">
+  </section>
+
+  <section id="about">
+    <div>
+      <h2>About ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo quia! Vitae eligendi animi aperiam iste? Modi repellendus aspernatur vel in perspiciatis cumque adipisci assumenda, ratione ex tempora. Fuga ullam minima quibusdam, earum odit tenetur neque culpa molestias repellat temporibus.</p>
+      <!-- <a href="#">Read more</a> -->
+    </div>
+
+    <img src="https://i.pravatar.cc/300" alt="">
+  </section>
+
+  <section id="services">
+    <div>
+      <h2>Services ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo quia! Vitae eligendi animi aperiam iste? Modi repellendus aspernatur vel in perspiciatis cumque adipisci assumenda, ratione ex tempora. Fuga ullam minima quibusdam, earum odit tenetur neque culpa molestias repellat temporibus.</p>
+      <!-- <a href="#">Read more</a> -->
+    </div>
+
+    <img src="https://i.pravatar.cc/300" alt="">
+  </section>
+
+  <section id="portfolio">
+    <div>
+      <h2>Portfolio ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo quia! Vitae eligendi animi aperiam iste? Modi repellendus aspernatur vel in perspiciatis cumque adipisci assumenda, ratione ex tempora. Fuga ullam minima quibusdam, earum odit tenetur neque culpa molestias repellat temporibus.</p>
+      <!-- <a href="#">Read more</a> -->
+    </div>
+
+    <img src="https://i.pravatar.cc/300" alt="">
+  </section>
+
+  <section id="team">
+    <div>
+      <h2>Team ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo quia! Vitae eligendi animi aperiam iste? Modi repellendus aspernatur vel in perspiciatis cumque adipisci assumenda, ratione ex tempora. Fuga ullam minima quibusdam, earum odit tenetur neque culpa molestias repellat temporibus.</p>
+      <!-- <a href="#">Read more</a> -->
+    </div>
+
+    <img src="https://i.pravatar.cc/300" alt="">
+  </section>
+
+  <section id="contact">
+    <div>
+      <h2>Contact ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo quia! Vitae eligendi animi aperiam iste? Modi repellendus aspernatur vel in perspiciatis cumque adipisci assumenda, ratione ex tempora. Fuga ullam minima quibusdam, earum odit tenetur neque culpa molestias repellat temporibus.</p>
+      <!-- <a href="#">Read more</a> -->
+    </div>
+
+    <img src="https://i.pravatar.cc/300" alt="">
+  </section>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function toggle() {
+      let header = document.getElementById("header");
+      header.classList.toggle("active");
+    }
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

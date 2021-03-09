@@ -1,0 +1,264 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  html {
+      scroll-behavior: smooth; /* makes scrolling smooth */
+    }
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* prt2 */
+  .container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  input[type="checkbox"] {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 100000;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .icon { /* the box in checkbox */
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 100001;
+    background-color: #000;
+    pointer-events: none;
+  }
+
+  .icon::before { /* the text inside of the box */
+    content: 'close';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  input[type="checkbox"]:checked ~ .icon::before {
+    content: 'menu';
+  }
+
+  ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 100vh;
+    background-color: #000;
+    transition: 0.5s;
+    z-index: 10000;
+    overflow-y: auto;
+  }
+
+  input[type="checkbox"]:checked ~ ul {
+    left: -300px; /* based on the width of the ul */
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    transition: 0.5s;
+  }
+
+  ul li a:hover {
+    transform: translateX(10px);
+    color: #ff0;
+  }
+
+  section {
+    position: relative;
+    left: 300px; /* move 300px from the start */
+    padding: 100px;
+    box-sizing: border-box;
+    transition: 0.5s
+  }
+
+  /* mozilla issue.. based on comments... not sure if it works
+  1. section {
+    width: 100%;
+    margin-right: 300px;
+    position: relative;
+    left: 300px;
+    padding: 100px;
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+
+  2. you can try transform:translateX(value) instead of position-left value..
+
+  */
+
+  input[type="checkbox"]:checked ~ section {
+    left: 0px; /* back to default position*/
+  }
+
+  section h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+  }
+
+  /* prt2 */
+  @media (max-width: 991px) {
+    section {
+      padding: 50px;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    input[type="checkbox"] {
+      z-index: 100001;
+      outline: none;
+      top: 0;
+      right: 0;
+    }
+
+    ul { /* makes full screen width */
+      width: 100%;
+      left: 0;
+    }
+
+
+    input[type="checkbox"]:checked ~ ul {
+      left: -100%;
+    }
+
+    input[type="checkbox"] ~ .icon {
+      top: 0;
+      right: 0;
+      background-color: #f00;
+      transition: 0.5s;
+    }
+
+    input[type="checkbox"]:checked ~ .icon {
+      background-color: #000;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <input type="checkbox" name="" checked>
+    <span class="icon"></span>
+    <ul>
+      <li><a href="#home">home</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#services">services</a></li>
+      <li><a href="#portfolio">portfolio</a></li>
+      <li><a href="#team">team</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+
+    <section id="home">
+      <h2>Home</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellat enim harum ipsa magnam quo fuga exercitationem, rerum, aliquam sequi aspernatur impedit quod quaerat quibusdam cupiditate labore, laboriosam dolorum eum sapiente accusamus esse. Vel pariatur nostrum expedita! Reiciendis, magni voluptatum labore sequi autem unde magnam tempore maiores sed ratione officia provident distinctio perspiciatis excepturi. Repellat ea, quasi labore voluptates facere perferendis obcaecati mollitia ratione cumque asperiores inventore facilis dolorem ipsa fugiat ab commodi error! Modi, fugiat ducimus! Repellat, velit quisquam pariatur asperiores maiores minus, rerum sint expedita, esse ipsam quae eum dignissimos natus voluptatum! Ea sapiente necessitatibus aperiam possimus magni excepturi, modi amet nemo nesciunt vel ipsum tempore, odio voluptatibus id eligendi ex molestiae numquam! Suscipit corrupti tenetur hic numquam quidem ab impedit facilis eaque, sapiente odio voluptatem ducimus sunt non voluptate atque quis, a fugiat nihil modi! Quod provident ipsum voluptas recusandae assumenda aliquid architecto maiores. Praesentium sunt deleniti maiores dicta nesciunt quasi, hic nisi iure autem accusantium necessitatibus doloribus veniam aperiam aspernatur libero quaerat debitis saepe asperiores commodi ad suscipit? Iure veniam, in obcaecati possimus pariatur earum porro ex, natus maiores tempora dolor omnis vel. Accusamus veniam maiores eaque sit perferendis provident, et adipisci exercitationem facere neque voluptatem quos aliquid quia quaerat libero a assumenda beatae enim dolor minus pariatur vel. Asperiores, labore. Repellat nemo totam nesciunt inventore doloribus cupiditate vitae dolorum animi. Excepturi velit aliquam asperiores beatae? Aliquam quae harum quis voluptatibus debitis itaque assumenda voluptatum consectetur doloribus aperiam adipisci libero, labore sunt culpa accusantium qui ducimus saepe dicta neque explicabo, eos magnam? Labore repellendus quam eum mollitia, nemo consectetur ullam ut consequuntur aliquid, fugiat iste atque quas. Fugit hic, animi consectetur dolor nesciunt nisi vero, accusamus, eveniet tempore deleniti expedita quis magnam nobis. Voluptatibus a modi rerum explicabo repudiandae eos mollitia, doloremque eligendi nobis provident aliquam!</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellat enim harum ipsa magnam quo fuga exercitationem, rerum, aliquam sequi aspernatur impedit quod quaerat quibusdam cupiditate labore, laboriosam dolorum eum sapiente accusamus esse. Vel pariatur nostrum expedita! Reiciendis, magni voluptatum labore sequi autem unde magnam tempore maiores sed ratione officia provident distinctio perspiciatis excepturi. Repellat ea, quasi labore voluptates facere perferendis obcaecati mollitia ratione cumque asperiores inventore facilis dolorem ipsa fugiat ab commodi error! Modi, fugiat ducimus! Repellat, velit quisquam pariatur asperiores maiores minus, rerum sint expedita, esse ipsam quae eum dignissimos natus voluptatum! Ea sapiente necessitatibus aperiam possimus magni excepturi, modi amet nemo nesciunt vel ipsum tempore, odio voluptatibus id eligendi ex molestiae numquam! Suscipit corrupti tenetur hic numquam quidem ab impedit facilis eaque, sapiente odio voluptatem ducimus sunt non voluptate atque quis, a fugiat nihil modi! Quod provident ipsum voluptas recusandae assumenda aliquid architecto maiores. Praesentium sunt deleniti maiores dicta nesciunt quasi, hic nisi iure autem accusantium necessitatibus doloribus veniam aperiam aspernatur libero quaerat debitis saepe asperiores commodi ad suscipit? Iure veniam, in obcaecati possimus pariatur earum porro ex, natus maiores tempora dolor omnis vel. Accusamus veniam maiores eaque sit perferendis provident, et adipisci exercitationem facere neque voluptatem quos aliquid quia quaerat libero a assumenda beatae enim dolor minus pariatur vel. Asperiores, labore. Repellat nemo totam nesciunt inventore doloribus cupiditate vitae dolorum animi. Excepturi velit aliquam asperiores beatae? Aliquam quae harum quis voluptatibus debitis itaque assumenda voluptatum consectetur doloribus aperiam adipisci libero, labore sunt culpa accusantium qui ducimus saepe dicta neque explicabo, eos magnam? Labore repellendus quam eum mollitia, nemo consectetur ullam ut consequuntur aliquid, fugiat iste atque quas. Fugit hic, animi consectetur dolor nesciunt nisi vero, accusamus, eveniet tempore deleniti expedita quis magnam nobis. Voluptatibus a modi rerum explicabo repudiandae eos mollitia, doloremque eligendi nobis provident aliquam!</p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellat enim harum ipsa magnam quo fuga exercitationem, rerum, aliquam sequi aspernatur impedit quod quaerat quibusdam cupiditate labore, laboriosam dolorum eum sapiente accusamus esse. Vel pariatur nostrum expedita! Reiciendis, magni voluptatum labore sequi autem unde magnam tempore maiores sed ratione officia provident distinctio perspiciatis excepturi. Repellat ea, quasi labore voluptates facere perferendis obcaecati mollitia ratione cumque asperiores inventore facilis dolorem ipsa fugiat ab commodi error! Modi, fugiat ducimus! Repellat, velit quisquam pariatur asperiores maiores minus, rerum sint expedita, esse ipsam quae eum dignissimos natus voluptatum! Ea sapiente necessitatibus aperiam possimus magni excepturi, modi amet nemo nesciunt vel ipsum tempore, odio voluptatibus id eligendi ex molestiae numquam! Suscipit corrupti tenetur hic numquam quidem ab impedit facilis eaque, sapiente odio voluptatem ducimus sunt non voluptate atque quis, a fugiat nihil modi! Quod provident ipsum voluptas recusandae assumenda aliquid architecto maiores. Praesentium sunt deleniti maiores dicta nesciunt quasi, hic nisi iure autem accusantium necessitatibus doloribus veniam aperiam aspernatur libero quaerat debitis saepe asperiores commodi ad suscipit? Iure veniam, in obcaecati possimus pariatur earum porro ex, natus maiores tempora dolor omnis vel. Accusamus veniam maiores eaque sit perferendis provident, et adipisci exercitationem facere neque voluptatem quos aliquid quia quaerat libero a assumenda beatae enim dolor minus pariatur vel. Asperiores, labore. Repellat nemo totam nesciunt inventore doloribus cupiditate vitae dolorum animi. Excepturi velit aliquam asperiores beatae? Aliquam quae harum quis voluptatibus debitis itaque assumenda voluptatum consectetur doloribus aperiam adipisci libero, labore sunt culpa accusantium qui ducimus saepe dicta neque explicabo, eos magnam? Labore repellendus quam eum mollitia, nemo consectetur ullam ut consequuntur aliquid, fugiat iste atque quas. Fugit hic, animi consectetur dolor nesciunt nisi vero, accusamus, eveniet tempore deleniti expedita quis magnam nobis. Voluptatibus a modi rerum explicabo repudiandae eos mollitia, doloremque eligendi nobis provident aliquam!</p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellat enim harum ipsa magnam quo fuga exercitationem, rerum, aliquam sequi aspernatur impedit quod quaerat quibusdam cupiditate labore, laboriosam dolorum eum sapiente accusamus esse. Vel pariatur nostrum expedita! Reiciendis, magni voluptatum labore sequi autem unde magnam tempore maiores sed ratione officia provident distinctio perspiciatis excepturi. Repellat ea, quasi labore voluptates facere perferendis obcaecati mollitia ratione cumque asperiores inventore facilis dolorem ipsa fugiat ab commodi error! Modi, fugiat ducimus! Repellat, velit quisquam pariatur asperiores maiores minus, rerum sint expedita, esse ipsam quae eum dignissimos natus voluptatum! Ea sapiente necessitatibus aperiam possimus magni excepturi, modi amet nemo nesciunt vel ipsum tempore, odio voluptatibus id eligendi ex molestiae numquam! Suscipit corrupti tenetur hic numquam quidem ab impedit facilis eaque, sapiente odio voluptatem ducimus sunt non voluptate atque quis, a fugiat nihil modi! Quod provident ipsum voluptas recusandae assumenda aliquid architecto maiores. Praesentium sunt deleniti maiores dicta nesciunt quasi, hic nisi iure autem accusantium necessitatibus doloribus veniam aperiam aspernatur libero quaerat debitis saepe asperiores commodi ad suscipit? Iure veniam, in obcaecati possimus pariatur earum porro ex, natus maiores tempora dolor omnis vel. Accusamus veniam maiores eaque sit perferendis provident, et adipisci exercitationem facere neque voluptatem quos aliquid quia quaerat libero a assumenda beatae enim dolor minus pariatur vel. Asperiores, labore. Repellat nemo totam nesciunt inventore doloribus cupiditate vitae dolorum animi. Excepturi velit aliquam asperiores beatae? Aliquam quae harum quis voluptatibus debitis itaque assumenda voluptatum consectetur doloribus aperiam adipisci libero, labore sunt culpa accusantium qui ducimus saepe dicta neque explicabo, eos magnam? Labore repellendus quam eum mollitia, nemo consectetur ullam ut consequuntur aliquid, fugiat iste atque quas. Fugit hic, animi consectetur dolor nesciunt nisi vero, accusamus, eveniet tempore deleniti expedita quis magnam nobis. Voluptatibus a modi rerum explicabo repudiandae eos mollitia, doloremque eligendi nobis provident aliquam!</p>
+    </section>
+
+    <section id="team">
+      <h2>Team</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellat enim harum ipsa magnam quo fuga exercitationem, rerum, aliquam sequi aspernatur impedit quod quaerat quibusdam cupiditate labore, laboriosam dolorum eum sapiente accusamus esse. Vel pariatur nostrum expedita! Reiciendis, magni voluptatum labore sequi autem unde magnam tempore maiores sed ratione officia provident distinctio perspiciatis excepturi. Repellat ea, quasi labore voluptates facere perferendis obcaecati mollitia ratione cumque asperiores inventore facilis dolorem ipsa fugiat ab commodi error! Modi, fugiat ducimus! Repellat, velit quisquam pariatur asperiores maiores minus, rerum sint expedita, esse ipsam quae eum dignissimos natus voluptatum! Ea sapiente necessitatibus aperiam possimus magni excepturi, modi amet nemo nesciunt vel ipsum tempore, odio voluptatibus id eligendi ex molestiae numquam! Suscipit corrupti tenetur hic numquam quidem ab impedit facilis eaque, sapiente odio voluptatem ducimus sunt non voluptate atque quis, a fugiat nihil modi! Quod provident ipsum voluptas recusandae assumenda aliquid architecto maiores. Praesentium sunt deleniti maiores dicta nesciunt quasi, hic nisi iure autem accusantium necessitatibus doloribus veniam aperiam aspernatur libero quaerat debitis saepe asperiores commodi ad suscipit? Iure veniam, in obcaecati possimus pariatur earum porro ex, natus maiores tempora dolor omnis vel. Accusamus veniam maiores eaque sit perferendis provident, et adipisci exercitationem facere neque voluptatem quos aliquid quia quaerat libero a assumenda beatae enim dolor minus pariatur vel. Asperiores, labore. Repellat nemo totam nesciunt inventore doloribus cupiditate vitae dolorum animi. Excepturi velit aliquam asperiores beatae? Aliquam quae harum quis voluptatibus debitis itaque assumenda voluptatum consectetur doloribus aperiam adipisci libero, labore sunt culpa accusantium qui ducimus saepe dicta neque explicabo, eos magnam? Labore repellendus quam eum mollitia, nemo consectetur ullam ut consequuntur aliquid, fugiat iste atque quas. Fugit hic, animi consectetur dolor nesciunt nisi vero, accusamus, eveniet tempore deleniti expedita quis magnam nobis. Voluptatibus a modi rerum explicabo repudiandae eos mollitia, doloremque eligendi nobis provident aliquam!</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellat enim harum ipsa magnam quo fuga exercitationem, rerum, aliquam sequi aspernatur impedit quod quaerat quibusdam cupiditate labore, laboriosam dolorum eum sapiente accusamus esse. Vel pariatur nostrum expedita! Reiciendis, magni voluptatum labore sequi autem unde magnam tempore maiores sed ratione officia provident distinctio perspiciatis excepturi. Repellat ea, quasi labore voluptates facere perferendis obcaecati mollitia ratione cumque asperiores inventore facilis dolorem ipsa fugiat ab commodi error! Modi, fugiat ducimus! Repellat, velit quisquam pariatur asperiores maiores minus, rerum sint expedita, esse ipsam quae eum dignissimos natus voluptatum! Ea sapiente necessitatibus aperiam possimus magni excepturi, modi amet nemo nesciunt vel ipsum tempore, odio voluptatibus id eligendi ex molestiae numquam! Suscipit corrupti tenetur hic numquam quidem ab impedit facilis eaque, sapiente odio voluptatem ducimus sunt non voluptate atque quis, a fugiat nihil modi! Quod provident ipsum voluptas recusandae assumenda aliquid architecto maiores. Praesentium sunt deleniti maiores dicta nesciunt quasi, hic nisi iure autem accusantium necessitatibus doloribus veniam aperiam aspernatur libero quaerat debitis saepe asperiores commodi ad suscipit? Iure veniam, in obcaecati possimus pariatur earum porro ex, natus maiores tempora dolor omnis vel. Accusamus veniam maiores eaque sit perferendis provident, et adipisci exercitationem facere neque voluptatem quos aliquid quia quaerat libero a assumenda beatae enim dolor minus pariatur vel. Asperiores, labore. Repellat nemo totam nesciunt inventore doloribus cupiditate vitae dolorum animi. Excepturi velit aliquam asperiores beatae? Aliquam quae harum quis voluptatibus debitis itaque assumenda voluptatum consectetur doloribus aperiam adipisci libero, labore sunt culpa accusantium qui ducimus saepe dicta neque explicabo, eos magnam? Labore repellendus quam eum mollitia, nemo consectetur ullam ut consequuntur aliquid, fugiat iste atque quas. Fugit hic, animi consectetur dolor nesciunt nisi vero, accusamus, eveniet tempore deleniti expedita quis magnam nobis. Voluptatibus a modi rerum explicabo repudiandae eos mollitia, doloremque eligendi nobis provident aliquam!</p>
+    </section>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

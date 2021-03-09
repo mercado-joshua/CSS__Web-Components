@@ -1,0 +1,192 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    /* https://i.pravatar.cc/300 */
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ff5722;
+  }
+
+  ul {
+    margin: 0;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.2);
+  }
+
+  h1 {
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+  }
+
+  ul li {
+    position: relative;
+    list-style: none;
+    padding: 4px;
+    border-radius: 4px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+
+  ul li:hover {
+    background-color: #607d8b;
+  }
+
+  ul li:hover a {
+    color: #fff;
+  }
+
+  ul li a {
+    color: #262626;
+    text-decoration: none;
+    display: block;
+    padding-left: 70px;
+  }
+
+  ul li .date { /* date container */
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    width: 60px;
+    text-align: center;
+  }
+
+  ul li .date::before { /* create date color */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 22px solid #e2574c;
+    border-bottom: 50px solid #e4e7e7;
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  ul li .date h3 {
+    position: relative;
+    z-index: 2;
+    margin-top: -6px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 36px;
+  }
+
+  ul li .date h3 span {
+    font-size: 36px;
+    color: #324d5b;
+  }
+
+  ul li p {
+    font-size: 18px;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <ul>
+    <h1>Latest Post</h1>
+    <li>
+      <div class="date">
+        <h3>Mar<br><span>06</span></h3>
+      </div>
+      <a href="#">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </a>
+    </li>
+
+    <li>
+        <div class="date">
+          <h3>Mar<br><span>06</span></h3>
+        </div>
+        <a href="#">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </a>
+      </li>
+
+      <li>
+          <div class="date">
+            <h3>Mar<br><span>06</span></h3>
+          </div>
+          <a href="#">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          </a>
+        </li>
+
+        <li>
+            <div class="date">
+              <h3>Mar<br><span>06</span></h3>
+            </div>
+            <a href="#">
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </a>
+          </li>
+
+          <li>
+              <div class="date">
+                <h3>Mar<br><span>06</span></h3>
+              </div>
+              <a href="#">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+              </a>
+            </li>
+  </ul>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

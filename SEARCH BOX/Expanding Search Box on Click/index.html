@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+  * {
+    box-sizing: border-box;
+    /*outline: dashed thin;*/
+  }
+
+  /*
+  * RESPONSIVE: KINDA
+  * flexbox: YES
+  * floats: NO
+  * explicit specified units: YES
+  */
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+  }
+
+  .search { /*small box at the center*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0,.5);
+    border-radius: 4px;
+    transition: width 0.5s;
+    overflow: hidden;
+  }
+
+  .search.active { /* widens the search box when clicked */
+    width: 600px;
+  }
+
+  .search input {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 90px);
+    height: 60px;
+    border: none;
+    outline: none;
+    font-size: 36px;
+    padding: 0 10px;
+    color: #666;
+  }
+
+  .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 4px;
+  }
+
+  .search.active .icon { /* change icon color when clicked */
+    background-color: #ff355a;
+  }
+
+  .search.active .icon::before { /* creates X "/" on button when clicked */
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 13px;
+    width: 18px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-right: 2px solid #fff;
+    border-radius: 0;
+    transition: 0.5s;
+    transform: rotate(45deg);
+  }
+
+  .search.active .icon::after { /* creates X "\" on button when clicked */
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 13px;
+    width: 18px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-right: 2px solid #fff;
+    border-radius: 0;
+    transition: 0.5s;
+    transform: rotate(-45deg);
+  }
+
+  .icon::before { /* creates Circle in magnifying glass */
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: 2px solid #262626;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+
+  .icon::after { /* creates handle in magnifying glass */
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border-left: 2px solid #262626;
+    border-radius: 0;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+  }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="search">
+    <input type="text" placeholder="Search...">
+    <div class="icon"></div>
+  </div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  $(document).ready(function() {
+    $(".icon").click(function() {
+      $(".search").toggleClass("active");
+    });
+  });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
